@@ -4,7 +4,7 @@ import Prelude
 
 import Data.Nullable (Nullable)
 import Effect.Uncurried (EffectFn1)
-import Unsafe.Coerce (unsafeCoerce) 
+import Unsafe.Coerce (unsafeCoerce)
 
 -- | A type representing the source of an [image](https://facebook.github.io/react-native/docs/images.html)
 -- |
@@ -48,8 +48,6 @@ refFunc :: forall ref. EffectFn1 (Nullable ref) Unit -> RefType ref
 refFunc = identity
 
 type Insets = {top:: Number, left:: Number, bottom:: Number, right:: Number}
-
-foreign import nativeImageSource :: {android::String, width::Int, height::Int } -> ImageSource
 
 class AutoEnum a where
   auto :: a
